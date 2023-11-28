@@ -46,13 +46,15 @@ R5(config-if)#do show ip ospf neigh <br />
 Troubleshoot PC1 and PC2 can't ping 8.8.8.8. Identify by checking OSPF 'default-information orginate' and OSPF interfaces on R5, as well as OSPF interfaces on R1. Resolve problem and verify results. <br />
 R5(config)#do show run (default-information originate tells all routers to use default route of the autonomous system boundary router) <br />
 <img src="https://i.imgur.com/Dq5SOcU.png" height="80%" width="80%" /> <br />
-R5(config)#do show ip route (need default route set to advertise to other routers) <br />
+R5(config)#do show ip route (need default route / gateway of last resort set so that default-information originate can advertise it to other routers) <br />
 <img src="https://i.imgur.com/glNjR71.png" height="80%" width="80%" /> <br />
 R5(config)#ip route 0.0.0.0 0.0.0.0 203.0.113.2 <br />
+R5(config)#do show ip route <br />
 <img src="https://i.imgur.com/0iXAV5B.png" height="80%" width="80%" /> <br />
 R1(config)#do show ip ospf int  <br />
 <img src="https://i.imgur.com/H7gjrzT.png" height="80%" width="80%" /> <br />
 R1(config)#int g0/0 <br />
 R1(config-if)#ip ospf 1 area 0 <br />
+<img src="https://i.imgur.com/ddQbeFQ.png" height="80%" width="80%" /> <br />
 <br />
 <br />
