@@ -1,7 +1,7 @@
 # OSPF-Troubleshooting
 
 <h2>Description</h2>
-Troubleshooting problems with OSPF configurations.
+Troubleshooting problems with OSPF configurations with DCE / DTE serial connections, missing routes, network types, hello / dead intervals, and ASBR default route advertising.
 
 <h2>Environments Used </h2>
 
